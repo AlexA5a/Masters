@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/authstyle.css" type="text/css">
+    <title>auth</title>
+</head>
+<body>
+    <form action="login.php" method="post">
+        <input checked="" id="signin" name="action" type="radio" value="signin">
+        <label for="signin">Вход</label>
+        <input id="signup" name="action" type="radio" value="signup">
+        <label for="signup">Регистрация</label>
+        <input id="reset" name="action" type="radio" value="reset">
+        <label for="reset">reset</label>
+        <div id="wrapper">
+            <div id="arrow"></div>
+            <input id="email" placeholder="Email" type="text">
+            <input id="pass" placeholder="Пароль" type="password">
+            <input id="repass" placeholder="Повтор пароля" type="password" onkeydown="valid(event)">
+        </div>
+        <button type="submit">
+            <span>
+                reset
+                <br>
+                Вход
+                <br>
+                Регистрация
+            </span>
+        </button>
+    </form>
+    <div id="hint">Click on the tabs</div>
+
+    <script type="text/javascript">
+        function valid(){
+            if(document.getElementById('pass').value != document.getElementById('repass').value) {
+                alert('Пароли не совпадают')
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
